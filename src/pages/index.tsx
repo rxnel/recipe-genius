@@ -23,44 +23,37 @@ export default function Home() {
 
   const LandingPage = () => {
     return (
-      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 font-serif text-white">
-        {/* Background Pattern - Replace with your SVG or image pattern */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <BackgroundSvg />
-        </div>
+      <main>
+        <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 font-serif text-white">
+          <div className="absolute inset-0 z-0 opacity-10">
+            <BackgroundSvg />
+          </div>
 
-        <div className="relative z-10 w-2/3 space-y-8 text-center">
-          <h1 className="mb-4 text-7xl font-extrabold tracking-tighter">
-            Recipe <span className="text-indigo-400">Genius</span>
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-400">
-            Revolutionize your culinary experience with AI.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-400">
-            Craft, innovate, and discover recipes tailored to your ingredients.{" "}
-          </p>
+          <div className="relative z-10 w-2/3 space-y-8 text-center">
+            <h1 className="mb-4 text-7xl font-extrabold tracking-tighter">
+              Recipe <span className="text-indigo-400">Genius</span>
+            </h1>
+            <p className="text-lg leading-relaxed text-gray-400">
+              Revolutionize your culinary experience with AI.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-400">
+              Craft, innovate, and discover recipes tailored to your
+              ingredients.{" "}
+            </p>
 
-          <div className="flex justify-center">
-            {!user && (
+            <div className="flex justify-center">
               <SignInButton>
                 <button className="transform rounded-lg bg-gradient-to-r from-indigo-400 to-blue-800 px-8 py-3 font-bold text-white shadow-md transition-transform duration-200 hover:scale-105 hover:from-indigo-600 hover:to-blue-700">
                   Sign In
                 </button>
               </SignInButton>
-            )}
-            {!!user && (
-              <SignOutButton>
-                <button className="transform rounded-lg bg-gradient-to-r from-indigo-400 to-blue-800 px-8 py-3 font-bold text-white shadow-md transition-transform duration-200 hover:scale-105 hover:from-indigo-600 hover:to-blue-700">
-                  Sign Out
-                </button>
-              </SignOutButton>
-            )}
+            </div>
+          </div>
+          <div className="absolute bottom-4 z-10 text-sm text-gray-500">
+            © 2023 Recipe Genius. All rights reserved.
           </div>
         </div>
-        <div className="absolute bottom-4 z-10 text-sm text-gray-500">
-          © 2023 Recipe Genius. All rights reserved.
-        </div>
-      </div>
+      </main>
     );
   };
 
@@ -68,17 +61,18 @@ export default function Home() {
     if (!user) return null;
     return (
       <>
-        <Head>
-          <title>Dashboard</title>
-        </Head>
         <main>
-          <h1>Dashboard</h1>
-          <p>Hi, {user.fullName}</p>
-          <SignOutButton>
-            <button className="transform rounded-lg bg-gradient-to-r from-indigo-400 to-blue-800 px-8 py-3 font-bold text-white shadow-md transition-transform duration-200 hover:scale-105 hover:from-indigo-600 hover:to-blue-700">
-              Sign Out
-            </button>
-          </SignOutButton>
+          <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 font-serif text-white">
+            <div className="absolute inset-0 z-0 opacity-10">
+              <BackgroundSvg />
+            </div>
+            <p>Hi, {user.fullName}</p>
+            <SignOutButton>
+              <button className="transform rounded-lg bg-gradient-to-r from-indigo-400 to-blue-800 px-8 py-3 font-bold text-white shadow-md transition-transform duration-200 hover:scale-105 hover:from-indigo-600 hover:to-blue-700">
+                Sign Out
+              </button>
+            </SignOutButton>
+          </div>
         </main>
       </>
     );
